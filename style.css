@@ -1,0 +1,220 @@
+/* 토익 성적발표 메일 리뉴얼 - 서비스 CSS
+   색, 간격, 글자, 모서리는 모두 YDS --ds-* 토큰만 쓴다.
+   모바일 먼저 작성하고 768px, 1280px 에서 배치를 바꾼다. */
+
+:root {
+  /* 메일 본문 폭: 원본 메일 폭(720)을 유지한다. YDS 템플릿의 좁은 화면 폭과 같은 값 */
+  --mail-width: 720px;
+}
+
+body {
+  background: var(--ds-color-bg-layer-default);
+  color: var(--ds-color-fg-neutral);
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 전체 틀: 가운데 한 줄 */
+.mail {
+  box-sizing: border-box;
+  width: min(100%, calc(var(--mail-width) + 2 * var(--ds-space-x-global-gutter)));
+  margin-inline: auto;
+  padding-inline: var(--ds-space-x-global-gutter);
+}
+
+/* ---------- 상단 로고 (위치 고정) ---------- */
+.mail-top {
+  padding-block: var(--ds-space-x3);
+  /* 원본의 로고 아래 굵은 회색 선을 유지 */
+  border-bottom: 2px solid var(--ds-color-stroke-neutral-solid);
+}
+.mail-top__logo { display: inline-flex; }
+.mail-top__logo img { display: block; max-width: 100%; height: auto; }
+
+/* ---------- 본문 ---------- */
+.mail-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-x10);
+  padding-block: var(--ds-space-x8) var(--ds-space-x10);
+}
+
+/* 타이틀 영역 */
+.mail-hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-x5);
+}
+.mail-hero__texts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-x3);
+}
+.mail-hero__title {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--ds-font-size-t09);
+  line-height: var(--ds-line-height-t09);
+  font-weight: var(--ds-font-weight-semibold);
+}
+.mail-hero__eyebrow {
+  font-size: var(--ds-font-size-t06);
+  line-height: var(--ds-line-height-t06);
+  color: var(--ds-color-fg-brand);
+}
+.mail-hero__lead {
+  font-size: var(--ds-font-size-t04);
+  line-height: var(--ds-line-height-t04);
+  color: var(--ds-color-fg-neutral-muted);
+}
+.mail-hero__img {
+  display: block;
+  align-self: center;
+  width: min(100%, 220px);
+  height: auto;
+}
+
+/* 섹션 공통 */
+.mail-sec {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-x3);
+  min-width: 0;
+}
+.mail-sec__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ds-space-x2);
+}
+.mail-sec__title {
+  font-size: var(--ds-font-size-t07);
+  line-height: var(--ds-line-height-t07);
+  font-weight: var(--ds-font-weight-semibold);
+}
+
+/* 성적 조회 방법 */
+.mail-how {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--ds-space-x4);
+}
+.mail-how__app {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-x2);
+}
+.mail-how__label {
+  font-size: var(--ds-font-size-t04);
+  line-height: var(--ds-line-height-t04);
+  font-weight: var(--ds-font-weight-semibold);
+  text-align: center;
+}
+.mail-how__stores {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--ds-space-x2);
+}
+
+/* 시험 일정: 시험일 칸 강조(굵기) */
+.mail-date { font-weight: var(--ds-font-weight-semibold); }
+
+/* 시험 일정 카드 목록 (모바일) - display 는 YDS 유틸(u-hide-from-md)에 맡긴다 */
+.mail-schedule-cards {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.mail-schedule-cards > li + li { margin-top: var(--ds-space-x3); }
+
+/* 접수 유의사항 */
+.mail-notes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-x1);
+  margin: 0;
+  padding-left: var(--ds-space-x5);
+  list-style: disc; /* YDS 기본 스타일이 목록 점을 지우므로 원본의 점(ㆍ)을 되살린다 */
+  font-size: var(--ds-font-size-t03);
+  line-height: var(--ds-line-height-t03);
+  color: var(--ds-color-fg-neutral-muted);
+}
+
+/* 바로가기 배너 3개: 원본 이미지 비율(237:128) 유지 */
+.mail-banners {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--ds-space-x3);
+}
+.mail-banner { --ds-imageframe-ratio: 237 / 128; display: block; }
+
+/* 토익뉴스 / 채용정보 */
+.mail-boards {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--ds-space-x8);
+}
+.mail-boards .ds-list { border-top: 1px solid var(--ds-color-stroke-neutral-weak); }
+
+/* 토익스피킹 배너: 원본 비율(720:240) 유지 */
+.mail-wide-banner { --ds-imageframe-ratio: 720 / 240; display: block; }
+
+/* ---------- 푸터 (위치 고정) ---------- */
+.mail-foot {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-x4);
+  padding-bottom: var(--ds-space-x10);
+  font-size: var(--ds-font-size-t02);
+  line-height: var(--ds-line-height-t02);
+  color: var(--ds-color-fg-neutral-subtle);
+}
+.mail-foot__ets { display: block; max-width: 100%; height: auto; }
+.mail-foot__notice {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-x0_5);
+  margin: 0;
+  padding-left: var(--ds-space-x4);
+  list-style: disc;
+}
+.mail-foot__company {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-x3);
+}
+.mail-foot__company img { display: block; max-width: 100%; height: auto; align-self: flex-start; }
+
+/* ---------- 768 이상 ---------- */
+@media (min-width: 768px) {
+  .mail-hero {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .mail-hero__texts { flex: 1 1 auto; min-width: 0; }
+  .mail-hero__title {
+    font-size: var(--ds-font-size-t12);
+    line-height: var(--ds-line-height-t12);
+  }
+  .mail-hero__img { flex: none; width: 220px; }
+
+  .mail-how {
+    flex-direction: row;
+    align-items: center;
+  }
+  .mail-how > .ds-btn { flex: 1 1 0; }
+  /* 세로 구분선 길이는 YDS 컴포넌트 변수로만 바꾼다 */
+  .mail-how > .ds-divider[data-orientation="vertical"] { --ds-divider-length: var(--ds-space-x16); }
+  .mail-how__app { flex: 1 1 0; }
+
+  .mail-banners { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .mail-boards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .mail-foot__company {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--ds-space-x8);
+  }
+}
