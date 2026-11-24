@@ -1,0 +1,412 @@
+/* 시안 G - 피그마 시안(토익 성적발표메일 시안)을 YDS 로 옮긴 것.
+   메일 공통(로고, 섹션 제목, 뉴스·채용, 푸터)은 drafts-v2.css 를 함께 쓰고, 여기에는 시안 G 만의 부분을 둔다.
+   모바일 먼저 작성하고 768px 에서 PC 배치(피그마 840 폭)로 바꾼다. */
+
+/* 시안용 Bold 글꼴 처리는 함께 불러오는 drafts-v2.css 맨 위에 있다 */
+
+/* 제목 막대 글꼴: 페이퍼로지 SemiBold (눈누 jsDelivr) */
+@font-face {
+  font-family: "Paperlogy";
+  font-weight: 600;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2") format("woff2");
+}
+
+:root {
+  /* 뉴스레터(2603.html)와 피그마 프레임 폭 840 */
+  --mail-width: 840px;
+}
+
+.g {
+  min-height: 100vh;
+  /* 포인트 색: 시안 G 안의 브랜드 색을 모두 브랜드 700 으로 (요청).
+     버튼, 배지, 제목 막대, 날짜 글자가 모두 이 값을 따른다. 누를 때는 한 단계 진한 800. */
+  --ds-color-bg-brand-solid: var(--ds-color-palette-brand-700);
+  --ds-color-bg-brand-solid-pressed: var(--ds-color-palette-brand-800);
+  --ds-color-fg-brand: var(--ds-color-palette-brand-700);
+}
+
+/* =========================================================
+   뉴스레터 기본 틀 (2603.html 참고)
+   로고 → 파란 제목 막대(피그마 Frame 84) → 내용 상자 → 푸터
+   ========================================================= */
+.g-top { padding-block: var(--ds-space-x6) var(--ds-space-x3); }
+.g-top a { display: inline-flex; }
+.g-top img { display: block; max-width: 100%; height: auto; }
+
+/* 모바일은 화면 끝까지, 768 부터 둥근 상자 */
+.g-frame { margin-inline: calc(-1 * var(--ds-space-x-global-gutter)); }
+
+.g-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ds-space-x3);
+  padding: var(--ds-space-x3_5) var(--ds-space-x-global-gutter);
+  background: var(--ds-color-bg-brand-solid);
+  color: var(--ds-color-fg-on-brand-solid);
+}
+.g-bar__title {
+  font-family: "Paperlogy", "Pretendard", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-x2);
+  min-width: 0;
+  font-size: var(--ds-font-size-t05);
+  line-height: var(--ds-line-height-t05);
+  font-weight: var(--ds-font-weight-semibold);
+}
+/* 회차 표시: 흰 테두리 글자 상자 (Badge 는 진한 바탕 위 흰 테두리 모양이 없어 서비스 클래스로 만든다) */
+.g-bar__round {
+  flex: none;
+  padding: 0 var(--ds-space-x1_5);
+  border: 1px solid currentColor;
+  border-radius: var(--ds-shape-sm);
+  /* 제목보다 한 단계 작게 (모바일 t04, PC t06) */
+  font-size: var(--ds-font-size-t04);
+  line-height: var(--ds-line-height-t04);
+}
+.g-bar__apps { display: flex; flex: none; align-items: center; gap: var(--ds-space-x3); }
+.g-bar__app { display: inline-flex; border-radius: var(--ds-shape-xs); }
+.g-bar__app:focus-visible { outline: 2px solid var(--ds-color-fg-on-brand-solid); outline-offset: 2px; }
+.g-bar__app img { display: block; width: var(--ds-space-x6); height: var(--ds-space-x6); }
+
+/* 내용 상자: 안쪽 여백(--g-pad)은 위 성적 조회 안내의 배경 번짐도 같이 쓴다 */
+.g-body {
+  --g-pad: var(--ds-space-x-global-gutter);
+  padding-inline: var(--g-pad);
+  border-bottom: 1px solid var(--ds-color-stroke-neutral-weak);
+}
+
+/* 푸터: 뉴스레터처럼 ETS 문구는 글자로, 회사 로고는 YBM 한국TOEIC위원회 로고로 */
+.g-foot { padding-top: var(--ds-space-x6); }
+.g-foot__ets { color: var(--ds-color-palette-gray-700); }
+.g-foot__logo { height: var(--ds-space-x9); width: auto; }
+
+@media (min-width: 768px) {
+  .g-top { padding-block: var(--ds-space-x8) var(--ds-space-x4); }
+  .g-frame { margin-inline: 0; }
+  .g-bar {
+    padding: var(--ds-space-x5) var(--ds-space-x9);
+    border-radius: var(--ds-shape-xl) var(--ds-shape-xl) 0 0;
+  }
+  .g-bar__title { gap: var(--ds-space-x3); font-size: var(--ds-font-size-t07); line-height: var(--ds-line-height-t07); }
+  .g-bar__round { font-size: var(--ds-font-size-t06); line-height: var(--ds-line-height-t06); }
+  .g-bar__apps { gap: var(--ds-space-x5); }
+  .g-bar__app img { width: var(--ds-space-x7); height: var(--ds-space-x7); }
+  .g-body {
+    --g-pad: var(--ds-space-x6);
+    border: 1px solid var(--ds-color-stroke-neutral-weak);
+    border-top: 0;
+    border-radius: 0 0 var(--ds-shape-xl) var(--ds-shape-xl);
+  }
+}
+
+/* =========================================================
+   성적 조회 안내 - 옅은 파란 빛 번짐 위 가운데 정렬
+   ========================================================= */
+.g-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--ds-space-x5);
+  margin-inline: calc(-1 * var(--g-pad));
+  margin-top: calc(-1 * var(--ds-space-x6));
+  /* 성적확인 버튼 아래 ~ 시험 일정 상자 위 = 42px (피그마, 40 + 2 토큰).
+     내용 상자의 섹션 간격(모바일 40, PC 48)은 음수 아래 여백으로 지워서 이 값만 남긴다.
+     그래서 번짐 바탕도 일정 상자 바로 위까지 이어진다. */
+  padding: var(--ds-space-x10) var(--g-pad) calc(var(--ds-space-x10) + var(--ds-space-x0_5));
+  margin-bottom: calc(-1 * var(--ds-space-x10));
+  /* 피그마 Group 5(38:829) 번짐 효과를 그림 그대로 깐다. 아래쪽은 흰색으로 이어진다 */
+  /* 피그마 Group 5(38:829) 번짐 효과를 그림 그대로 깐다. 위 10% 아래부터 흰색으로 서서히 이어진다 */
+  background:
+    linear-gradient(to bottom, transparent 10%, var(--ds-color-bg-layer-default)),
+    var(--ds-color-bg-layer-default) url("images/hero-bg.jpg") center top / cover no-repeat;
+  text-align: center;
+}
+.g-hero__img { display: block; width: 80px; height: auto; }
+.g-hero__texts { display: flex; flex-direction: column; gap: var(--ds-space-x1_5); font-weight: inherit; }
+.g-hero__lead {
+  font-size: var(--ds-font-size-t04);
+  line-height: var(--ds-line-height-t04);
+  font-weight: var(--ds-font-weight-medium);
+}
+.g-hero__date {
+  font-size: var(--ds-font-size-t07);
+  line-height: var(--ds-line-height-t07);
+  font-weight: var(--ds-font-weight-semibold);
+}
+.g-hero__date em { font-style: normal; color: var(--ds-color-fg-brand); }
+.g-hero__btn {
+  align-self: stretch;
+}
+
+/* =========================================================
+   시험 일정 - 테두리 상자 안의 표
+   모바일: 회차마다 한 묶음(라벨 + 값), PC: 머리 줄이 있는 4칸 표
+   ========================================================= */
+.g-sched {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-x5);
+  padding: var(--ds-space-x5);
+  border: 1px solid var(--ds-color-stroke-neutral-weak);
+  border-radius: var(--ds-shape-xl);
+}
+.g-sched__list { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; }
+.g-sched__row {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-x1_5);
+  padding-block: var(--ds-space-x4);
+  border-top: 1px solid var(--ds-color-stroke-neutral-weak);
+}
+.g-sched__row:first-child { border-top: 0; padding-top: 0; }
+.g-sched__row:last-child { padding-bottom: 0; }
+/* 모바일: 라벨 | 값(날짜 + 시간 배지, 길면 다음 줄로) */
+.g-sched__cell {
+  display: grid;
+  grid-template-columns: var(--ds-space-x16) minmax(0, 1fr);
+  align-items: baseline;
+  gap: var(--ds-space-x2);
+  min-width: 0;
+  font-size: var(--ds-font-size-t04);
+  line-height: var(--ds-line-height-t04);
+  font-weight: var(--ds-font-weight-medium);
+}
+.g-sched__data { display: flex; flex-wrap: wrap; align-items: center; gap: var(--ds-space-x1) var(--ds-space-x1_5); min-width: 0; }
+.g-sched__label {
+  color: var(--ds-color-palette-gray-700);
+  font-weight: var(--ds-font-weight-regular);
+}
+.g-sched__cell--exam { padding-right: var(--ds-space-x10); font-weight: var(--ds-font-weight-semibold); } /* 오른쪽 화살표 버튼 자리 */
+/* 날짜 안은 붙임 칸(&nbsp;)으로 묶어, 접수기간은 "~" 뒤에서만 줄이 바뀐다 */
+.g-sched__cell--exam .g-sched__value { color: var(--ds-color-fg-brand); }
+.g-sched__go {
+  /* 모바일: 시험일 줄 오른쪽 끝 */
+  position: absolute;
+  top: var(--ds-space-x3);
+  right: 0;
+}
+.g-sched__row:first-child .g-sched__go { top: calc(-1 * var(--ds-space-x1)); }
+/* 마우스를 올리면 진한 회색 원 + 흰 화살표 (피그마 31:347).
+   일정, 토익뉴스, 채용정보, 바로가기 카드 모두 동그란 화살표 위에 올렸을 때만 바뀐다.
+   (키보드로 카드에 포커스하면 카드의 화살표도 함께 바뀐다) */
+.g-go { transition: background-color var(--ds-duration-fast) var(--ds-easing-standard), color var(--ds-duration-fast) var(--ds-easing-standard); }
+.g-go:hover,
+a.g-go:focus-visible,
+.g-link:focus-visible .g-go {
+  background: var(--ds-color-bg-neutral-solid-pressed);
+  color: var(--ds-color-fg-on-neutral-solid);
+}
+@media (prefers-reduced-motion: reduce) { .g-go { transition: none; } }
+a.g-go:focus-visible { outline: 2px solid var(--ds-color-stroke-focus-ring); outline-offset: 2px; }
+
+/* 접수 유의사항 - 옅은 회색 상자 */
+.g-notes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-x1_5);
+  margin: 0;
+  padding: var(--ds-space-x4);
+  border-radius: var(--ds-shape-lg);
+  background: var(--ds-color-bg-neutral-muted);
+  list-style: none;
+  font-size: var(--ds-font-size-t03);
+  line-height: var(--ds-line-height-t03);
+  color: var(--ds-color-palette-gray-800);
+}
+.g-notes li { display: flex; align-items: flex-start; gap: var(--ds-space-x1); }
+.g-notes .ds-icon { margin-top: var(--ds-space-x0_5); }
+
+/* =========================================================
+   바로가기 카드 3개 (회색 면 카드, 카드 전체가 링크)
+   YDS Card 는 바탕색 변수가 없어 서비스 클래스로 만든다.
+   ========================================================= */
+.g-links { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--ds-space-x3); }
+.g-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-x4);
+  padding: var(--ds-space-x4) var(--ds-space-x12) var(--ds-space-x4) var(--ds-space-x5);
+  border-radius: var(--ds-shape-xl);
+  background: var(--ds-color-bg-neutral);
+  color: var(--ds-color-palette-gray-1000);
+  text-decoration: none;
+}
+.g-link:focus-visible { outline: 2px solid var(--ds-color-stroke-focus-ring); outline-offset: 2px; }
+.g-link__img { display: block; flex: none; width: var(--ds-space-x10); height: auto; }
+.g-link__texts { display: flex; flex-direction: column; gap: var(--ds-space-x0_5); min-width: 0; }
+.g-link__title {
+  font-size: var(--ds-font-size-t05);
+  line-height: var(--ds-line-height-t05);
+  font-weight: var(--ds-font-weight-bold);
+}
+.g-link__desc {
+  font-size: var(--ds-font-size-t03);
+  /* 요청으로 줄 간격을 한 단계 좁게 (13px 글자에 t02 줄 높이 18px) */
+  line-height: var(--ds-line-height-t02);
+  font-weight: var(--ds-font-weight-medium);
+  color: var(--ds-color-palette-gray-800);
+}
+.g-link__desc br { display: none; } /* 모바일은 한 줄로 이어 쓴다 */
+.g-link__go { position: absolute; top: var(--ds-space-x3); right: var(--ds-space-x3); }
+
+/* 동그란 화살표 (바로가기 카드와 시험 일정 표가 같은 모양을 쓴다) */
+.g-go {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: var(--ds-space-x7);
+  height: var(--ds-space-x7);
+  border-radius: var(--ds-shape-pill);
+  background: var(--ds-color-bg-neutral-weak-alpha);
+  color: var(--ds-color-palette-gray-800);
+}
+
+/* =========================================================
+   PC (768 이상) - 피그마 840 배치
+   ========================================================= */
+@media (min-width: 768px) {
+  .g-hero { margin-top: calc(-1 * var(--ds-space-x8)); margin-bottom: calc(-1 * var(--ds-space-x12)); padding-top: var(--ds-space-x12); gap: var(--ds-space-x6); }
+  .g-hero__img { width: 100px; }
+  .g-hero__lead { font-size: var(--ds-font-size-t05); line-height: var(--ds-line-height-t05); }
+  .g-hero__date { font-size: var(--ds-font-size-t08); line-height: var(--ds-line-height-t08); }
+  .g-hero__btn { align-self: center; min-width: 300px; }
+
+  /* 시험 일정: 시험일 | 접수기간 | 성적발표일 | 버튼 */
+  .g-sched { padding: var(--ds-space-x6); gap: var(--ds-space-x6); border-radius: var(--ds-shape-2xl); }
+  /* 한 격자: 칸 폭은 세 칸 모두 내용 길이에 맞추고(가장 긴 날짜 기준), 칸 사이 간격은 모두 같다.
+     남는 폭은 마지막 화살표 칸이 가져간다. 칸이 모자라면 시간 배지가 날짜 아래로 내려간다.
+     머리 줄과 회차 줄은 subgrid 로 같은 칸을 써서 날짜가 바뀌어도 세로줄이 맞는다. */
+  .g-sched__table {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(min-content, max-content)) minmax(var(--ds-space-x7), 1fr);
+    column-gap: var(--ds-space-x6);
+  }
+  .g-sched__head, .g-sched__list, .g-sched__row {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+    column-gap: normal; /* 모바일 줄 간격 대신 바깥 격자의 칸 간격을 그대로 쓴다 */
+    align-items: center;
+  }
+  .g-sched__head {
+    padding-bottom: var(--ds-space-x3);
+    border-bottom: 1px solid var(--ds-color-stroke-neutral-weak);
+    font-size: var(--ds-font-size-t04);
+    line-height: var(--ds-line-height-t04);
+    font-weight: var(--ds-font-weight-semibold);
+  }
+  .g-sched__row { padding: var(--ds-space-x3) 0; }
+  .g-sched__row:first-child { padding-top: var(--ds-space-x3); }
+  .g-sched__row:last-child { padding-bottom: 0; }
+  /* 칸이 좁으면(768~1279) 시간 배지가 날짜 아래로 내려간다 */
+  .g-sched__cell { display: block; }
+  /* 시험일, 접수기간, 성적발표일: 머리 줄과 값 모두 칸 가운데 정렬 */
+  .g-sched__head > span, .g-sched__cell { text-align: center; }
+  .g-sched__data { justify-content: center; }
+  .g-sched__cell--exam { padding-right: 0; }
+  .g-sched__go,
+  .g-sched__row:first-child .g-sched__go { position: static; justify-self: end; }
+
+  /* 바로가기 카드: 세 칸, 아이콘 위 가운데 정렬 */
+  .g-links { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--ds-space-x3); }
+  .g-link {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: var(--ds-space-x5);
+    min-height: 200px;
+    box-sizing: border-box;
+    padding: var(--ds-space-x8) var(--ds-space-x6) var(--ds-space-x6);
+    text-align: center;
+  }
+  .g-link__img { width: 50px; }
+  .g-link__title { font-size: var(--ds-font-size-t06); line-height: var(--ds-line-height-t06); }
+  .g-link__desc br { display: inline; }
+}
+
+/* 토익뉴스, 채용정보 목록: 글자는 YDS List small 크기(t04), 한 줄을 넘으면 말줄임(…) */
+.g .m-boards .ds-list-item__content { min-width: 0; }
+.g .m-boards .ds-list-item__title {
+  color: var(--ds-color-palette-gray-800); /* 요청으로 기본 글자색보다 한 단계 흐리게 */
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Lucide arrow-up-right - YDS 아이콘 목록에 없어 같은 형식으로 더한다 */
+:root { --ds-icon-arrow-up-right: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22black%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22%3E%3Cpath d=%22M7 7h10v10%22/%3E%3Cpath d=%22M7 17 17 7%22/%3E%3C/svg%3E"); }
+.ds-icon--arrow-up-right { --ds-icon: var(--ds-icon-arrow-up-right); }
+
+/* =========================================================
+   시안 1 수정 (피그마 47:45 기준, 2026-11-23)
+   시안 2, 3 은 이 파일을 같이 쓰므로 .g1 안에서만 바꾼다.
+   ========================================================= */
+
+/* 안내 글, 날짜 글꼴: 페이퍼로지 Bold */
+@font-face {
+  font-family: "Paperlogy";
+  font-weight: 700;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2") format("woff2");
+}
+
+/* 성적 조회 안내: 번짐 배경 없이 흰 바탕, 신문·돋보기 그림 */
+.g1 .g-hero { background: var(--ds-color-bg-layer-default); }
+.g1 .g-hero__texts { gap: var(--ds-space-x1); }
+.g1 .g-hero__lead,
+.g1 .g-hero__date {
+  font-family: "Paperlogy", "Pretendard", sans-serif;
+  font-weight: var(--ds-font-weight-bold);
+  color: var(--ds-color-palette-gray-1000);
+}
+.g1 .g-hero__date em { color: var(--ds-color-fg-brand); }
+/* 날짜 줄 자간 1px (피그마 47:71, YDS 에 자간 토큰이 없어 값 그대로) */
+.g1 .g-hero__date { letter-spacing: 1px; }
+/* 성적확인 버튼 글자: 요청으로 Bold 에서 한 단계 낮춰 SemiBold (YDS large 기본값) */
+
+/* 시험 일정 */
+/* 줄 구분선: 일정 표와 토익뉴스, 채용정보 목록을 같은 gray 팔레트 색으로 (요청) */
+/* 피그마 gray/100(#f3f4f6) 과 가장 가까운 YDS gray-200 */
+.g1 .g-sched__row { border-top-color: var(--ds-color-palette-gray-200); }
+.g1 .m-boards .ds-list[data-divider] > li + li > .ds-list-item::before { background: var(--ds-color-palette-gray-200); }
+.g1 .g-sched__cell:not(.g-sched__cell--exam) .g-sched__value { color: var(--ds-color-palette-gray-900); }
+.g1 .g-sched .ds-badge { --ds-badge-fg: var(--ds-color-palette-gray-900); font-weight: var(--ds-font-weight-semibold); }
+.g1 .g-notes { font-weight: var(--ds-font-weight-medium); }
+
+/* 바로가기 카드: 더 옅은 회색 바탕, 제목 SemiBold */
+.g1 .g-link { background: var(--ds-color-bg-neutral-muted); }
+.g1 .g-link__title { font-weight: var(--ds-font-weight-semibold); }
+
+/* 토익뉴스, 채용정보 목록 글자: Medium */
+.g1 .m-boards .ds-list-item__title { font-weight: var(--ds-font-weight-medium); }
+/* 마우스를 올리거나 키보드로 고르면 한 단계 굵게 (Medium → SemiBold) */
+.g1 .m-boards .ds-list-item:hover .ds-list-item__title,
+.g1 .m-boards .ds-list-item:focus-visible .ds-list-item__title { font-weight: var(--ds-font-weight-semibold); }
+
+/* 전체 배경: 회색 화면 바탕(canvas) 대신 흰색 (요청, 피그마 47:45 바탕도 흰색).
+   body 바탕은 drafts-v2.css 를 같이 쓰는 다른 시안과 나누려고 시안 1 이 들어 있을 때만 바꾼다. */
+body:has(.g1) { background: var(--ds-color-bg-layer-default); }
+
+/* 내용 상자(body) 위아래 여백: 모바일, PC 모두 24 (요청, 피그마는 PC 위 32 / 아래 48) */
+.g1 .g-body.m-body { padding-block: var(--ds-space-x6); }
+/* 맨 위 그림도 상자 위에서 24 에 오도록 안내 영역의 위쪽 번짐 자리를 걷는다 (흰 바탕이라 필요 없음) */
+.g1 .g-hero { margin-top: 0; padding-top: 0; }
+
+/* 토익스피킹 배너 (그림 한 장, 모서리는 그림에도 들어 있다) */
+.g-banner { display: block; border-radius: var(--ds-shape-xl); overflow: hidden; }
+.g-banner img { display: block; width: 100%; height: auto; }
+.g-banner:focus-visible { outline: 2px solid var(--ds-color-stroke-focus-ring); outline-offset: 2px; }
+
+@media (min-width: 768px) {
+  .g1 .g-sched__head { border-bottom-color: var(--ds-color-palette-gray-200); }
+  /* 피그마: 내용 상자 위 32 바로 아래 그림, 섹션 사이는 모두 42 (40 + 2 토큰).
+     흰 바탕이라 위 번짐 자리가 필요 없어 음수 여백을 걷는다. */
+  .g1 .g-body { gap: calc(var(--ds-space-x10) + var(--ds-space-x0_5)); }
+  .g1 .g-hero { margin-block: 0; padding-block: 0; }
+}
