@@ -1,0 +1,56 @@
+/* 시안 2 - 시안 1(draft-g.css .g1)과 같은 화면에 글꼴만 맑은 고딕으로 바꾼다.
+   제목 막대, 안내 글의 페이퍼로지까지 메일 안 모든 글자에 적용한다 (요청).
+   맑은 고딕은 윈도우 기본 글꼴이라 맥, 휴대폰처럼 없는 기기에서는 기본 고딕으로 보인다.
+   맑은 고딕은 보통(400)과 굵게(700) 두 굵기뿐이라 Medium(500)은 보통, SemiBold(600)는 굵게로 보인다. */
+/* 시안 1 의 글꼴 지정(.g1 .g-hero__lead 등)보다 앞서도록 클래스를 겹쳐 쓴다 */
+.m.g1.g-malgun,
+.m.g1.g-malgun * {
+  font-family: "Malgun Gothic", "맑은 고딕", sans-serif;
+  /* 맑은 고딕은 글자 사이가 넓어 보여 모든 글자를 살짝 좁힌다 (요청).
+     em 단위라 글자 크기에 맞춰 줄어든다 (14px 글자는 약 -0.14px, 28px 글자는 약 -0.28px). */
+  letter-spacing: -0.01em;
+}
+
+/* 제목 막대의 "TOEIC 정기시험 성적발표 안내"만 시안 1 처럼 페이퍼로지 SemiBold (요청).
+   회차 표시(583회)는 위 규칙대로 맑은 고딕으로 남는다. */
+.m.g1.g-malgun .g-bar__title {
+  font-family: "Paperlogy", "Pretendard", sans-serif;
+}
+
+/* 상단 안내 글과 날짜 줄만 자간 -0.03em (요청). 나머지는 위 -0.01em */
+.m.g1.g-malgun .g-hero__texts,
+.m.g1.g-malgun .g-hero__texts * {
+  letter-spacing: -0.03em;
+}
+
+/* 카드 설명 글(Medium)용 페이퍼로지 Medium. SemiBold, Bold 는 draft-g.css 에서 불러온다 */
+@font-face {
+  font-family: "Paperlogy";
+  font-weight: 500;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2") format("woff2");
+}
+
+/* 성적확인 버튼, 토익뉴스·채용정보 제목은 시안 1 처럼 Pretendard, 자간 0 (요청) */
+.m.g1.g-malgun .g-hero__btn,
+.m.g1.g-malgun .m-boards .m-sec__title {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  letter-spacing: normal;
+}
+
+/* 바로가기 카드 줄(TOEIC 시험 일정, YouTube, Story)은 페이퍼로지, 자간 0 (요청) */
+.m.g1.g-malgun .g-links,
+.m.g1.g-malgun .g-links * {
+  font-family: "Paperlogy", "Pretendard", sans-serif;
+  letter-spacing: normal;
+}
+/* 바로가기 카드 (요청): 제목 한 단계 굵게(SemiBold → Bold).
+   설명 글은 굵기 Medium 그대로, 크기만 한 단계 크게 13 → 14 (줄 높이도 한 단계 18 → 20, 시안 1 처럼 크기보다 한 단계 좁게) */
+.m.g1.g-malgun .g-link__title { font-weight: var(--ds-font-weight-bold); }
+.m.g1.g-malgun .g-link__desc {
+  /* 설명 글만 Pretendard (요청). 제목은 페이퍼로지 그대로 */
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: var(--ds-font-weight-medium);
+  font-size: var(--ds-font-size-t04);
+  line-height: var(--ds-line-height-t03);
+}

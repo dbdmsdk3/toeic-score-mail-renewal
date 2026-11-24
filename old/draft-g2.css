@@ -1,0 +1,154 @@
+/* 시안 2 - 날짜 카드형
+   바깥 틀(로고, 제목 막대, 내용 상자, 푸터)과 상단 배경, 동그란 화살표, 유의사항 상자는 시안 1(draft-g.css)을 그대로 쓴다.
+   여기에는 종 그림부터 바로가기까지 안쪽 배치만 둔다. 모바일 먼저, 768px 에서 PC 배치. */
+
+/* =========================================================
+   성적 조회 안내: 종 + 안내 글 / 날짜 카드 + 버튼
+   ========================================================= */
+.g2-hero { gap: var(--ds-space-x5); }
+.g2-hero__intro { display: flex; flex-direction: column; align-items: center; gap: var(--ds-space-x3); }
+.g2-hero__img { display: block; width: 64px; height: auto; }
+.g2-hero__lead {
+  font-size: var(--ds-font-size-t04);
+  line-height: var(--ds-line-height-t04);
+  font-weight: var(--ds-font-weight-medium);
+  color: var(--ds-color-fg-neutral-muted);
+}
+.g2-hero__main { display: flex; flex-direction: column; gap: var(--ds-space-x3); width: 100%; }
+
+/* 날짜 카드: 흰 면 + 그림자 */
+.g2-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--ds-space-x1);
+  padding: var(--ds-space-x5) var(--ds-space-x4);
+  border-radius: var(--ds-shape-2xl);
+  background: var(--ds-color-bg-layer-default);
+  box-shadow: var(--ds-elevation-overlay);
+}
+.g2-date__label {
+  font-size: var(--ds-font-size-t03);
+  line-height: var(--ds-line-height-t03);
+  font-weight: var(--ds-font-weight-semibold);
+  color: var(--ds-color-fg-brand);
+}
+.g2-date__day {
+  font-size: var(--ds-font-size-t09);
+  line-height: var(--ds-line-height-t09);
+  font-weight: var(--ds-font-weight-bold);
+}
+.g2-date__time {
+  font-size: var(--ds-font-size-t05);
+  line-height: var(--ds-line-height-t05);
+  font-weight: var(--ds-font-weight-medium);
+  color: var(--ds-color-fg-neutral-muted);
+}
+.g2-date__time em { font-style: normal; font-weight: var(--ds-font-weight-bold); color: var(--ds-color-fg-brand); }
+
+/* =========================================================
+   시험 일정: 회차 카드
+   ========================================================= */
+.g2-sched { display: flex; flex-direction: column; gap: var(--ds-space-x4); }
+.g2-cards { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--ds-space-x3); margin: 0; padding: 0; list-style: none; }
+.g2-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--ds-color-stroke-neutral-weak);
+  border-radius: var(--ds-shape-xl);
+  overflow: hidden;
+}
+/* 카드 머리: 옅은 브랜드 바탕에 시험일 */
+.g2-card__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-x0_5);
+  padding: var(--ds-space-x4) var(--ds-space-x12) var(--ds-space-x4) var(--ds-space-x4);
+  background: var(--ds-color-bg-brand-weak);
+}
+.g2-card__label {
+  font-size: var(--ds-font-size-t02);
+  line-height: var(--ds-line-height-t02);
+  font-weight: var(--ds-font-weight-semibold);
+  color: var(--ds-color-fg-brand);
+}
+.g2-card__day {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ds-space-x1_5);
+  font-size: var(--ds-font-size-t05);
+  line-height: var(--ds-line-height-t05);
+}
+.g2-card__day strong { font-weight: var(--ds-font-weight-bold); color: var(--ds-color-fg-brand); }
+.g2-card__go { position: absolute; top: var(--ds-space-x4); right: var(--ds-space-x4); }
+/* 카드 몸: 접수기간, 성적발표일 */
+.g2-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-x3);
+  margin: 0;
+  padding: var(--ds-space-x4);
+}
+.g2-card__info div { display: flex; flex-direction: column; gap: var(--ds-space-x0_5); }
+.g2-card__info dt {
+  font-size: var(--ds-font-size-t03);
+  line-height: var(--ds-line-height-t03);
+  color: var(--ds-color-fg-neutral-subtle);
+}
+.g2-card__info dd {
+  margin: 0;
+  font-size: var(--ds-font-size-t04);
+  line-height: var(--ds-line-height-t04);
+  font-weight: var(--ds-font-weight-medium);
+}
+
+/* =========================================================
+   바로가기: 가로 카드 (아이콘 | 글 | 화살표)
+   ========================================================= */
+.g2-links { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--ds-space-x2); }
+.g2-link {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-x3);
+  padding: var(--ds-space-x3_5) var(--ds-space-x4);
+  border-radius: var(--ds-shape-xl);
+  background: var(--ds-color-bg-neutral);
+  color: var(--ds-color-fg-neutral);
+  text-decoration: none;
+}
+.g2-link:focus-visible { outline: 2px solid var(--ds-color-stroke-focus-ring); outline-offset: 2px; }
+.g2-link:focus-visible .g-go { background: var(--ds-color-bg-neutral-solid-pressed); color: var(--ds-color-fg-on-neutral-solid); }
+.g2-link__img { display: block; flex: none; width: var(--ds-space-x9); height: auto; }
+.g2-link__texts { display: flex; flex: 1; flex-direction: column; gap: var(--ds-space-x0_5); min-width: 0; }
+.g2-link__title { font-size: var(--ds-font-size-t04); line-height: var(--ds-line-height-t04); font-weight: var(--ds-font-weight-bold); }
+.g2-link__desc {
+  font-size: var(--ds-font-size-t02);
+  line-height: var(--ds-line-height-t02);
+  font-weight: var(--ds-font-weight-medium);
+  color: var(--ds-color-fg-neutral-muted);
+}
+
+/* =========================================================
+   PC (768 이상)
+   ========================================================= */
+@media (min-width: 768px) {
+  /* 왼쪽: 종 + 안내 글 / 오른쪽: 날짜 카드 + 버튼 */
+  .g2-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: var(--ds-space-x8);
+    text-align: left;
+  }
+  .g2-hero__intro { align-items: flex-start; gap: var(--ds-space-x4); }
+  .g2-hero__img { width: 88px; }
+  .g2-hero__lead { font-size: var(--ds-font-size-t06); line-height: var(--ds-line-height-t06); }
+  .g2-hero__btn { align-self: stretch; min-width: 0; }
+  .g2-date { padding: var(--ds-space-x6); }
+  .g2-date__day { font-size: var(--ds-font-size-t10); line-height: var(--ds-line-height-t10); }
+
+  .g2-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .g2-links { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--ds-space-x3); }
+}
