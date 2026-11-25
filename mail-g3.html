@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- 시안 3 메일 발송용 (피그마 69:618, table 구조, 모든 스타일 인라인)
+     - 크기, 간격은 피그마 값, 색은 피그마 색과 가장 가까운 YDS 값을 풀어서 적었다 (메일 프로그램이 CSS 변수를 읽지 못함).
+       피그마 → YDS: #111827→#1a1c20, #374151→#2a3038, #6b7280→#555d6d, #d1d5db→#d1d3d8, #f3f4f6→#f3f4f5, #f9fafb→#f7f8f9, #f0f0f0→#efefef
+     - 시험 일정 카드 3장은 피그마에 같은 날짜가 들어 있어, 시안 1 의 실제 3회차 일정으로 채웠다.
+     - 이미지 주소(images/...)는 미리보기용 상대 주소다. 발송 전에 회사 이미지 서버의 전체 주소(https://...)로 바꿔야 보인다.
+     - 성적 조회 안내 상자의 무늬는 바탕 그림이라 Outlook PC 에서는 빠지고 파란 면만 보인다.
+     - 글꼴: 페이퍼로지, Pretendard 를 불러오지 못하는 메일 프로그램에서는 맑은 고딕(또는 기기 기본 고딕)으로 보인다.
+     - 아래 <style> 의 모바일 배치는 지원하는 메일 프로그램(애플 메일, Gmail 앱 등)에서만 쓰인다. 없어도 PC 배치로 보인다. -->
+<html lang="ko" xml:lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YBM 한국토익위원회</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css">
+<style type="text/css">
+@font-face { font-family: "Paperlogy"; font-weight: 600; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2") format("woff2"); }
+@font-face { font-family: "Paperlogy"; font-weight: 700; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2") format("woff2"); }
+/* 모바일 (768 미만): 지원하는 메일 프로그램에서만 한 줄씩 쌓는다 */
+@media screen and (max-width: 767px) {
+  .wrap { width: 100% !important; }
+  .px { padding-left: 16px !important; padding-right: 16px !important; }
+  .bar { padding: 14px 16px !important; border-radius: 0 !important; }
+  .bar-title { font-size: 16px !important; line-height: 24px !important; }
+  .bar-round { font-size: 14px !important; line-height: 21px !important; }
+  .frame { padding: 24px 16px !important; border-left: 0 !important; border-right: 0 !important; border-radius: 0 !important; }
+  .hero { padding: 32px 20px !important; background-position: right -120px top 0 !important; }
+  .hero-lead { font-size: 16px !important; line-height: 24px !important; letter-spacing: -0.5px !important; }
+  .hero-date { font-size: 22px !important; line-height: 32px !important; }
+  .btn { width: 100% !important; }
+  .btn a { font-size: 18px !important; padding: 14px 20px !important; }
+  .stack { display: block !important; width: 100% !important; box-sizing: border-box; }
+  .gap-m { display: block !important; height: 12px !important; width: 100% !important; }
+  .link-card { height: auto !important; padding-bottom: 24px !important; }
+  .ellipsis { width: auto !important; max-width: 230px; }
+  .img-fluid { width: 100% !important; height: auto !important; }
+  .foot-logo { padding: 0 0 12px !important; }
+}
+</style>
+</head>
+<body style="margin:0; padding:0; background-color:#ffffff;">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#ffffff;">
+<tr>
+<td align="center" style="padding:0;">
+
+<table class="wrap" role="presentation" width="840" cellspacing="0" cellpadding="0" border="0" style="width:840px; margin:0 auto; font-family:Pretendard,'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',sans-serif; color:#1a1c20;">
+
+<!-- 로고 -->
+<tr>
+<td class="px" align="left" style="padding:32px 0 23px;"><a href="https://www.toeic.co.kr/" target="_blank" title="새창"><img src="https://imagesisa.ybmnet.co.kr/platform/exam_ybmnet_co_kr/newsletter/img/logo.jpg" width="196" height="31" alt="와이비엠 한국 TOEIC 위원회" style="display:block; border:0;"></a></td>
+</tr>
+
+<!-- 제목 막대 (진한 남색) -->
+<tr>
+<td class="bar" bgcolor="#1a1c20" style="padding:20px 36px; background-color:#1a1c20; border-radius:16px 16px 0 0;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+  <tr>
+    <td align="left" valign="middle">
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td class="bar-round" valign="middle" style="padding:0 6px; border:1px solid #ffffff; border-radius:8px; font-family:Paperlogy,Pretendard,'Malgun Gothic','맑은 고딕',sans-serif; font-size:18px; line-height:28px; font-weight:600; color:#ffffff; white-space:nowrap;">583회</td>
+        <td width="12" style="width:12px; font-size:0; line-height:0;">&nbsp;</td>
+        <td class="bar-title" valign="middle" style="word-break:keep-all; font-family:Paperlogy,Pretendard,'Malgun Gothic','맑은 고딕',sans-serif; font-size:20px; line-height:29px; font-weight:600; color:#ffffff;">TOEIC 정기시험 성적발표 안내</td>
+      </tr>
+      </table>
+    </td>
+    <td align="right" valign="middle" style="white-space:nowrap;">
+      <a href="https://apps.apple.com/kr/app/ybmsisadaskeom-toeic-r-toeic/id410244795" target="_blank" title="새창"><img src="images/icon-appstore.png" width="28" height="28" alt="App Store에서 YBM 어학시험 앱 받기" style="vertical-align:middle; border:0;"></a><span style="display:inline-block; width:20px;">&nbsp;</span><a href="https://play.google.com/store/apps/details?id=com.YBMSisa" target="_blank" title="새창"><img src="images/icon-googleplay.png" width="28" height="28" alt="Google Play에서 YBM 어학시험 앱 받기" style="vertical-align:middle; border:0;"></a>
+    </td>
+  </tr>
+  </table>
+</td>
+</tr>
+
+<!-- 내용 상자 (안쪽 폭 766, 섹션 사이 36) -->
+<tr>
+<td class="frame" style="padding:36px; border:1px solid #dcdee3; border-top:0; border-radius:0 0 16px 16px;">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+
+  <!-- 성적 조회 안내: 파란 상자 + 오른쪽 흰 무늬(바탕 그림) -->
+  <tr>
+  <td class="hero" align="center" bgcolor="#1d4ed8" background="images/mail/g3-hero-pattern.png" style="padding:48px; background-color:#1d4ed8; background-image:url('images/mail/g3-hero-pattern.png'); background-repeat:no-repeat; background-position:512px 15px; background-size:289px 290px; border-radius:16px; text-align:center;">
+    <p class="hero-lead" style="margin:0; word-break:keep-all; font-family:Pretendard,'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',sans-serif; font-size:24px; line-height:24px; font-weight:600; letter-spacing:-1px; color:#f7f8f9;">제 583회 (26년 11월 15일 (일) 시행) TOEIC 정기시험 성적조회는</p>
+    <p class="hero-date" style="margin:16px 0 0; word-break:keep-all; font-family:Pretendard,'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',sans-serif; font-size:34px; line-height:32px; font-weight:700; letter-spacing:0.5px; color:#ffffff;">2026년 11월 24일 (화) 12:00&nbsp;~</p>
+    <!-- 성적확인 버튼 (흰 면, 파란 글자) -->
+    <table class="btn" role="presentation" width="340" cellspacing="0" cellpadding="0" border="0" align="center" style="margin:36px auto 0; width:340px;">
+    <tr>
+      <td align="center" bgcolor="#ffffff" style="background-color:#ffffff; border-radius:10px;">
+        <a href="https://exam.toeic.co.kr/common/commonPreLogin.php?returnUrl=/result/scoreList.php&amp;utm_source=email&amp;utm_medium=email&amp;utm_campaign=583toeicscore" target="_blank" style="display:block; padding:12px; font-family:Pretendard,'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',sans-serif; font-size:24px; line-height:28px; font-weight:700; color:#1d4ed8; text-decoration:none; text-align:center; border-radius:10px;">TOEIC 홈페이지 성적확인</a>
+      </td>
+    </tr>
+    </table>
+  </td>
+  </tr>
+
+  <tr><td height="36" style="height:36px; font-size:0; line-height:0;">&nbsp;</td></tr>
+
+  <!-- 시험 일정: 회차마다 카드 한 장 (247 / 12 / 248 / 12 / 247) -->
+  <tr>
+  <td>
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+      <!-- 1회차 -->
+      <td class="stack" width="208" valign="top" bgcolor="#ffffff" style="width:208px; padding:12px 13px 24px 24px; border:1px solid #d1d3d8; border-radius:16px; background-color:#ffffff;">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+          <td valign="top" style="padding-top:12px; font-size:16px; line-height:19px; font-weight:600; color:#555d6d;">시험일</td>
+          <td width="28" align="right" valign="top" style="width:28px;"><a href="https://exam.toeic.co.kr/receipt/receiptStep1.php?utm_source=email&amp;utm_medium=email&amp;utm_campaign=583toeicscore" target="_blank"><img src="images/mail/go-arrow-up-right.png" width="28" height="28" alt="11월 29일 시험 접수 바로가기" style="display:block; border:0;"></a></td>
+        </tr>
+        <tr><td colspan="2" style="padding:6px 11px 0 0;"><span style="font-size:20px; line-height:24px; font-weight:600; color:#1d4ed8; white-space:nowrap; vertical-align:middle;">26.11.29&nbsp;(일)</span>&nbsp;<span style="display:inline-block; padding:4px 6px; border-radius:4px; background-color:#f3f4f5; font-size:14px; line-height:16px; font-weight:600; color:#2a3038; vertical-align:middle;">09:20</span></td></tr>
+        <tr><td colspan="2" style="padding:24px 11px 24px 0;"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td height="1" bgcolor="#f3f4f5" style="height:1px; background-color:#f3f4f5; font-size:0; line-height:0;">&nbsp;</td></tr></table></td></tr>
+        <tr><td colspan="2" style="padding:0 11px 0 0; font-size:16px; line-height:19px; font-weight:600; color:#555d6d;">접수기간</td></tr>
+        <tr><td colspan="2" style="padding:6px 11px 0 0;">
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0"><tr>
+            <td valign="bottom" style="font-size:20px; line-height:30px; font-weight:600; color:#2a3038; white-space:nowrap;">26.10.12&nbsp;(월)<br>~ 26.11.26&nbsp;(목)</td>
+            <td valign="bottom" style="padding:0 0 3px 6px;"><span style="display:inline-block; padding:4px 6px; border-radius:4px; background-color:#f3f4f5; font-size:14px; line-height:16px; font-weight:600; color:#2a3038;">13:00</span></td>
+          </tr></table>
+        </td></tr>
+        <tr><td colspan="2" style="padding:24px 11px 24px 0;"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td height="1" bgcolor="#f3f4f5" style="height:1px; background-color:#f3f4f5; font-size:0; line-height:0;">&nbsp;</td></tr></table></td></tr>
+        <tr><td colspan="2" style="padding:0 11px 0 0; font-size:16px; line-height:19px; font-weight:600; color:#555d6d;">성적발표일</td></tr>
+        <tr><td colspan="2" style="padding:6px 11px 0 0;"><span style="font-size:20px; line-height:24px; font-weight:600; color:#2a3038; white-space:nowrap; vertical-align:middle;">26.12.08&nbsp;(화)</span>&nbsp;<span style="display:inline-block; padding:4px 6px; border-radius:4px; background-color:#f3f4f5; font-size:14px; line-height:16px; font-weight:600; color:#2a3038; vertical-align:middle;">12:00</span></td></tr>
+        </table>
+      </td>
+      <td class="gap-m" width="12" style="width:12px; font-size:0; line-height:0;">&nbsp;</td>
+      <!-- 2회차 -->
+      <td class="stack" width="209" valign="top" bgcolor="#ffffff" style="width:209px; padding:12px 13px 24px 24px; border:1px solid #d1d3d8; border-radius:16px; background-color:#ffffff;">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+          <td valign="top" style="padding-top:12px; font-size:16px; line-height:19px; font-weight:600; color:#555d6d;">시험일</td>
+          <td width="28" align="right" valign="top" style="width:28px;"><a href="https://exam.toeic.co.kr/receipt/receiptStep1.php?utm_source=email&amp;utm_medium=email&amp;utm_campaign=583toeicscore" target="_blank"><img src="images/mail/go-arrow-up-right.png" width="28" height="28" alt="12월 13일 시험 접수 바로가기" style="display:block; border:0;"></a></td>
+        </tr>
+        <tr><td colspan="2" style="padding:6px 11px 0 0;"><span style="font-size:20px; line-height:24px; font-weight:600; color:#1d4ed8; white-space:nowrap; vertical-align:middle;">26.12.13&nbsp;(일)</span>&nbsp;<span style="display:inline-block; padding:4px 6px; border-radius:4px; background-color:#f3f4f5; font-size:14px; line-height:16px; font-weight:600; color:#2a3038; vertical-align:middle;">09:20</span></td></tr>
+        <tr><td colspan="2" style="padding:24px 11px 24px 0;"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td height="1" bgcolor="#f3f4f5" style="height:1px; background-color:#f3f4f5; font-size:0; line-height:0;">&nbsp;</td></tr></table></td></tr>
+        <tr><td colspan="2" style="padding:0 11px 0 0; font-size:16px; line-height:19px; font-weight:600; color:#555d6d;">접수기간</td></tr>
+        <tr><td colspan="2" style="padding:6px 11px 0 0;">
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0"><tr>
+            <td valign="bottom" style="font-size:20px; line-height:30px; font-weight:600; color:#2a3038; white-space:nowrap;">26.10.26&nbsp;(월)<br>~ 26.12.10&nbsp;(목)</td>
+            <td valign="bottom" style="padding:0 0 3px 6px;"><span style="display:inline-block; padding:4px 6px; border-radius:4px; background-color:#f3f4f5; font-size:14px; line-height:16px; font-weight:600; color:#2a3038;">13:00</span></td>
+          </tr></table>
+        </td></tr>
+        <tr><td colspan="2" style="padding:24px 11px 24px 0;"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td height="1" bgcolor="#f3f4f5" style="height:1px; background-color:#f3f4f5; font-size:0; line-height:0;">&nbsp;</td></tr></table></td></tr>
+        <tr><td colspan="2" style="padding:0 11px 0 0; font-size:16px; line-height:19px; font-weight:600; color:#555d6d;">성적발표일</td></tr>
+        <tr><td colspan="2" style="padding:6px 11px 0 0;"><span style="font-size:20px; line-height:24px; font-weight:600; color:#2a3038; white-space:nowrap; vertical-align:middle;">26.12.22&nbsp;(화)</span>&nbsp;<span style="display:inline-block; padding:4px 6px; border-radius:4px; background-color:#f3f4f5; font-size:14px; line-height:16px; font-weight:600; color:#2a3038; vertical-align:middle;">12:00</span></td></tr>
+        </table>
+      </td>
+      <td class="gap-m" width="12" style="width:12px; font-size:0; line-height:0;">&nbsp;</td>
+      <!-- 3회차 -->
+      <td class="stack" width="208" valign="top" bgcolor="#ffffff" style="width:208px; padding:12px 13px 24px 24px; border:1px solid #d1d3d8; border-radius:16px; background-color:#ffffff;">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+          <td valign="top" style="padding-top:12px; font-size:16px; line-height:19px; font-weight:600; color:#555d6d;">시험일</td>
+          <td width="28" align="right" valign="top" style="width:28px;"><a href="https://exam.toeic.co.kr/receipt/receiptStep1.php?utm_source=email&amp;utm_medium=email&amp;utm_campaign=583toeicscore" target="_blank"><img src="images/mail/go-arrow-up-right.png" width="28" height="28" alt="12월 27일 시험 접수 바로가기" style="display:block; border:0;"></a></td>
+        </tr>
+        <tr><td colspan="2" style="padding:6px 11px 0 0;"><span style="font-size:20px; line-height:24px; font-weight:600; color:#1d4ed8; white-space:nowrap; vertical-align:middle;">26.12.27&nbsp;(일)</span>&nbsp;<span style="display:inline-block; padding:4px 6px; border-radius:4px; background-color:#f3f4f5; font-size:14px; line-height:16px; font-weight:600; color:#2a3038; vertical-align:middle;">09:20</span></td></tr>
+        <tr><td colspan="2" style="padding:24px 11px 24px 0;"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td height="1" bgcolor="#f3f4f5" style="height:1px; background-color:#f3f4f5; font-size:0; line-height:0;">&nbsp;</td></tr></table></td></tr>
+        <tr><td colspan="2" style="padding:0 11px 0 0; font-size:16px; line-height:19px; font-weight:600; color:#555d6d;">접수기간</td></tr>
+        <tr><td colspan="2" style="padding:6px 11px 0 0;">
+          <table role="presentation" cellspacing="0" cellpadding="0" border="0"><tr>
+            <td valign="bottom" style="font-size:20px; line-height:30px; font-weight:600; color:#2a3038; white-space:nowrap;">26.11.09&nbsp;(월)<br>~ 26.12.23&nbsp;(수)</td>
+            <td valign="bottom" style="padding:0 0 3px 6px;"><span style="display:inline-block; padding:4px 6px; border-radius:4px; background-color:#f3f4f5; font-size:14px; line-height:16px; font-weight:600; color:#2a3038;">13:00</span></td>
+          </tr></table>
+        </td></tr>
+        <tr><td colspan="2" style="padding:24px 11px 24px 0;"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"><tr><td height="1" bgcolor="#f3f4f5" style="height:1px; background-color:#f3f4f5; font-size:0; line-height:0;">&nbsp;</td></tr></table></td></tr>
+        <tr><td colspan="2" style="padding:0 11px 0 0; font-size:16px; line-height:19px; font-weight:600; color:#555d6d;">성적발표일</td></tr>
+        <tr><td colspan="2" style="padding:6px 11px 0 0;"><span style="font-size:20px; line-height:24px; font-weight:600; color:#2a3038; white-space:nowrap; vertical-align:middle;">27.01.06&nbsp;(수)</span>&nbsp;<span style="display:inline-block; padding:4px 6px; border-radius:4px; background-color:#f3f4f5; font-size:14px; line-height:16px; font-weight:600; color:#2a3038; vertical-align:middle;">12:00</span></td></tr>
+        </table>
+      </td>
+    </tr>
+    </table>
+
+    <!-- 접수 유의사항 (일정 카드 아래 12) -->
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top:12px;">
+    <tr>
+    <td bgcolor="#f7f8f9" style="padding:24px; background-color:#f7f8f9; border-radius:12px;">
+      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td width="20" valign="top" style="width:20px; padding-top:2px;"><img src="images/mail/icon-alert.png" width="16" height="16" alt="" style="display:block; border:0;"></td>
+        <td valign="top" style="font-size:14px; line-height:20px; font-weight:500; color:#555d6d; word-break:keep-all;">고사장 마감 상황에 따라 선착순 조기 마감될 수 있으니 서둘러 주시기 바랍니다.</td>
+      </tr>
+      <tr><td colspan="2" height="6" style="height:6px; font-size:0; line-height:0;">&nbsp;</td></tr>
+      <tr>
+        <td width="20" valign="top" style="width:20px; padding-top:2px;"><img src="images/mail/icon-alert.png" width="16" height="16" alt="" style="display:block; border:0;"></td>
+        <td valign="top" style="font-size:14px; line-height:20px; font-weight:500; color:#555d6d; word-break:keep-all;">어학시험 접수 시 최근 2년 이내의 사진만 유효합니다.</td>
+      </tr>
+      <tr><td colspan="2" height="6" style="height:6px; font-size:0; line-height:0;">&nbsp;</td></tr>
+      <tr>
+        <td width="20" valign="top" style="width:20px; padding-top:2px;"><img src="images/mail/icon-alert.png" width="16" height="16" alt="" style="display:block; border:0;"></td>
+        <td valign="top" style="font-size:14px; line-height:20px; font-weight:500; color:#555d6d; word-break:keep-all;">사진 등록 후 2년이 지난 수험자분께서는 새로운 사진으로 교체해 주시기 바랍니다.</td>
+      </tr>
+      </table>
+    </td>
+    </tr>
+    </table>
+  </td>
+  </tr>
+
+  <tr><td height="36" style="height:36px; font-size:0; line-height:0;">&nbsp;</td></tr>
+
+  <!-- 바로가기 카드 3개 (높이 250, 247 / 12 / 248 / 12 / 247) -->
+  <tr>
+  <td>
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+      <td class="stack link-card" width="223" height="189" valign="top" bgcolor="#f3f4f5" style="width:223px; height:189px; padding:12px 12px 49px; background-color:#f3f4f5; border-radius:16px; text-align:center;">
+        <a href="https://exam.toeic.co.kr/receipt/examSchList.php?utm_source=email&amp;utm_medium=email&amp;utm_campaign=583toeicscore" target="_blank" title="새창" style="display:block; text-decoration:none; color:#1a1c20;">
+          <img src="images/mail/go-arrow-up-right.png" width="28" height="28" alt="" style="display:block; margin:0 0 0 auto; border:0;">
+          <img src="images/mail/g3-icon-calendar.png" width="60" height="60" alt="" style="display:block; margin:9px auto 0; border:0;">
+          <span style="display:block; margin-top:20px; font-size:20px; line-height:24px; font-weight:600; color:#1a1c20;">TOEIC 시험 일정</span>
+          <span style="display:block; margin-top:6px; font-size:16px; line-height:21px; font-weight:500; color:#555d6d; word-break:keep-all;">커리어를 높이는 어학시험<br>2027년 시험 일정을 확인하세요.</span>
+        </a>
+      </td>
+      <td class="gap-m" width="12" style="width:12px; font-size:0; line-height:0;">&nbsp;</td>
+      <td class="stack link-card" width="224" height="189" valign="top" bgcolor="#f3f4f5" style="width:224px; height:189px; padding:12px 12px 49px; background-color:#f3f4f5; border-radius:16px; text-align:center;">
+        <a href="https://www.youtube.com/channel/UCcbdvIxtzm0E2vqGBpWW4nQ" target="_blank" title="새창" style="display:block; text-decoration:none; color:#1a1c20;">
+          <img src="images/mail/go-arrow-up-right.png" width="28" height="28" alt="" style="display:block; margin:0 0 0 auto; border:0;">
+          <img src="images/mail/g3-icon-youtube.png" width="60" height="60" alt="" style="display:block; margin:9px auto 0; border:0;">
+          <span style="display:block; margin-top:20px; font-size:20px; line-height:24px; font-weight:600; color:#1a1c20;">TOEIC YouTube</span>
+          <span style="display:block; margin-top:6px; font-size:16px; line-height:21px; font-weight:500; color:#555d6d; word-break:keep-all;">YouTube 채널을 통해<br>한국TOEIC위원회와 소통해 보세요.</span>
+        </a>
+      </td>
+      <td class="gap-m" width="12" style="width:12px; font-size:0; line-height:0;">&nbsp;</td>
+      <td class="stack link-card" width="223" height="189" valign="top" bgcolor="#f3f4f5" style="width:223px; height:189px; padding:12px 12px 49px; background-color:#f3f4f5; border-radius:16px; text-align:center;">
+        <a href="https://www.toeicstory.co.kr/" target="_blank" title="새창" style="display:block; text-decoration:none; color:#1a1c20;">
+          <img src="images/mail/go-arrow-up-right.png" width="28" height="28" alt="" style="display:block; margin:0 0 0 auto; border:0;">
+          <img src="images/mail/g3-icon-story.png" width="60" height="60" alt="" style="display:block; margin:9px auto 0; border:0;">
+          <span style="display:block; margin-top:20px; font-size:20px; line-height:24px; font-weight:600; color:#1a1c20;">TOEIC Story</span>
+          <span style="display:block; margin-top:6px; font-size:16px; line-height:21px; font-weight:500; color:#555d6d; word-break:keep-all;">한국TOEIC위원회<br>공식 블로그</span>
+        </a>
+      </td>
+    </tr>
+    </table>
+  </td>
+  </tr>
+
+  <!-- 피그마: 카드 줄 높이 260 (카드 250 + 10) 뒤 36 -->
+  <tr><td height="46" style="height:46px; font-size:0; line-height:0;">&nbsp;</td></tr>
+
+  <!-- 토익뉴스, 채용정보: 테두리 상자 두 개 (377 / 12 / 377) -->
+  <tr>
+  <td>
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tr>
+      <!-- 토익뉴스 -->
+      <td class="stack" width="327" valign="top" style="width:327px; padding:24px; border:1px solid #d1d3d8; border-radius:16px;">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+          <td align="left" valign="middle" style="font-size:24px; line-height:29px; font-weight:600; color:#1a1c20;">토익뉴스</td>
+          <td align="right" valign="middle"><a href="https://exam.toeic.co.kr/news/news.php?utm_source=email&amp;utm_medium=email&amp;utm_campaign=583toeicscore" target="_blank"><img src="images/mail/go-arrow-right.png" width="28" height="28" alt="토익뉴스 더보기" style="display:inline-block; border:0;"></a></td>
+        </tr>
+        </table>
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top:12px;">
+        <tr><td style="padding:0 16px; height:48px;"><a href="https://exam.toeic.co.kr/news/noticeView.php?noticeCode=10090" target="_blank" style="text-decoration:none;"><div class="ellipsis" style="width:295px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; font-size:16px; line-height:21px; font-weight:500; color:#555d6d;">2027년 TOEIC 정기시험 일정 안내</div></a></td></tr>
+        <tr><td style="padding:0 16px; height:47px; border-top:1px solid #f3f4f5;"><a href="https://www.toeic.co.kr/event/card/digiloca.php" target="_blank" style="text-decoration:none;"><div class="ellipsis" style="width:295px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; font-size:16px; line-height:21px; font-weight:500; color:#555d6d;">YBM X DIGI LOCA 롯데카드 이벤트</div></a></td></tr>
+        <tr><td style="padding:0 16px; height:47px; border-top:1px solid #f3f4f5;"><a href="https://www.toeicstory.co.kr/2538" target="_blank" style="text-decoration:none;"><div class="ellipsis" style="width:295px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; font-size:16px; line-height:21px; font-weight:500; color:#555d6d;">2026년 '지자체 토익, 토익스피킹 응시료 지원 사업' 안내</div></a></td></tr>
+        </table>
+      </td>
+      <td class="gap-m" width="12" style="width:12px; font-size:0; line-height:0;">&nbsp;</td>
+      <!-- 채용정보 -->
+      <td class="stack" width="327" valign="top" style="width:327px; padding:24px; border:1px solid #d1d3d8; border-radius:16px;">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+          <td align="left" valign="middle" style="font-size:24px; line-height:29px; font-weight:600; color:#1a1c20;">채용정보</td>
+          <td align="right" valign="middle"><a href="https://exam.toeic.co.kr/recruit/recruit.php?utm_source=email&amp;utm_medium=email&amp;utm_campaign=583toeicscore" target="_blank"><img src="images/mail/go-arrow-right.png" width="28" height="28" alt="채용정보 더보기" style="display:inline-block; border:0;"></a></td>
+        </tr>
+        </table>
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top:12px;">
+        <tr><td style="padding:0 16px; height:48px;"><a href="https://exam.toeic.co.kr/recruit/recruitView.php?jobsCode=15710&amp;utm_source=email&amp;utm_medium=email&amp;utm_campaign=583toeicscore" target="_blank" style="text-decoration:none;"><div class="ellipsis" style="width:295px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; font-size:16px; line-height:21px; font-weight:500; color:#555d6d;">[트리니티항공] 일반직(신입) 채용</div></a></td></tr>
+        <tr><td style="padding:0 16px; height:47px; border-top:1px solid #f3f4f5;"><a href="https://exam.toeic.co.kr/recruit/recruitView.php?jobsCode=15696&amp;utm_source=email&amp;utm_medium=email&amp;utm_campaign=583toeicscore" target="_blank" style="text-decoration:none;"><div class="ellipsis" style="width:295px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; font-size:16px; line-height:21px; font-weight:500; color:#555d6d;">[서울특별시 서남병원] 2026년 제100차 약사 모집</div></a></td></tr>
+        <tr><td style="padding:0 16px; height:47px; border-top:1px solid #f3f4f5;"><a href="https://exam.toeic.co.kr/recruit/recruitView.php?jobsCode=15697&amp;utm_source=email&amp;utm_medium=email&amp;utm_campaign=583toeicscore" target="_blank" style="text-decoration:none;"><div class="ellipsis" style="width:295px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; font-size:16px; line-height:21px; font-weight:500; color:#555d6d;">[부산외국어대학교] 2027년 일반직 직원 채용</div></a></td></tr>
+        </table>
+      </td>
+    </tr>
+    </table>
+  </td>
+  </tr>
+
+  <tr><td height="36" style="height:36px; font-size:0; line-height:0;">&nbsp;</td></tr>
+
+  <!-- 토익스피킹 배너 (피그마 69:829 를 그림 한 장으로) -->
+  <tr>
+  <td><a href="https://www.toeicswt.co.kr/?utm_source=email&amp;utm_medium=email&amp;utm_campaign=583toeicscore" target="_blank" title="새창"><img class="img-fluid" src="images/banner-toeic-speaking-g3.jpg" width="766" height="340" alt="모든 취준에 진심! 토익스피킹 - 시험접수 바로가기" style="display:block; width:766px; height:auto; border:0; border-radius:16px;"></a></td>
+  </tr>
+
+</table>
+</td>
+</tr>
+
+<!-- 푸터 -->
+<tr>
+<td class="px" style="padding:24px 0 40px; font-size:12px; line-height:18px; color:#868b94;">
+  <p style="margin:0; font-size:12px; line-height:18px; color:#868b94;">ETS, TOEIC and 토익 are registered trademarks of ETS and used under license by YBM. The Eight-Point logo is a trademark of ETS.</p>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top:16px;">
+  <tr><td width="16" valign="top" style="width:16px; font-size:12px; line-height:18px; color:#868b94;">•</td><td style="padding-bottom:2px; font-size:12px; line-height:18px; color:#868b94;">본 메일은 정보통신망이용촉진 및 정보보호등에 관한 법률에 의거하여 제작 발송된 메일입니다.</td></tr>
+  <tr><td width="16" valign="top" style="width:16px; font-size:12px; line-height:18px; color:#868b94;">•</td><td style="padding-bottom:2px; font-size:12px; line-height:18px; color:#868b94;">본 메일은 발신전용으로 회신되지 않습니다. 문의사항은 <a href="https://www.ybmsisa.com/center/center.asp" target="_blank" style="color:#868b94; text-decoration:underline;">고객센터</a>를 이용해 주세요.</td></tr>
+  <tr><td width="16" valign="top" style="width:16px; font-size:12px; line-height:18px; color:#868b94;">•</td><td style="padding-bottom:2px; font-size:12px; line-height:18px; color:#868b94;">메일수신을 원하지 않을 경우 <a href="https://www.ybmsisa.com/common/mail_deny.asp" target="_blank" style="color:#868b94; text-decoration:underline;">수신거부</a>를 클릭하시면 수신거부처리가 이루어집니다.</td></tr>
+  <tr><td width="16" valign="top" style="width:16px; font-size:12px; line-height:18px; color:#868b94;">•</td><td style="font-size:12px; line-height:18px; color:#868b94;">(If you do not wish to receive emails from us, click <a href="https://www.ybmsisa.com/common/mail_deny.asp" target="_blank" style="color:#868b94; text-decoration:underline;">here</a>)</td></tr>
+  </table>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top:16px;">
+  <tr><td height="1" bgcolor="#efefef" style="height:1px; background-color:#efefef; font-size:0; line-height:0;">&nbsp;</td></tr>
+  </table>
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top:16px;">
+  <tr>
+    <td class="stack foot-logo" width="154" valign="top" style="width:154px; padding:0 32px 0 0;"><img src="https://imagesisa.ybmnet.co.kr/platform/design_ybmnet_co_kr/ydg/resource/img-logo_14.png" width="154" height="36" alt="(주)와이비엠 한국토익위원회" style="display:block; border:0;"></td>
+    <td class="stack" valign="top" style="font-size:12px; line-height:18px; color:#868b94;">㈜ 와이비엠 | 대표이사 : 허문호 | 사업자등록번호 101-81-14655<br>서울특별시 종로구 종로 98 (종로2가) | 대표번호 : 02-2279-0505 | return@mail.ybm.co.kr<br>Copyright ⓒ (주)YBM. All rights reserved.</td>
+  </tr>
+  </table>
+</td>
+</tr>
+
+</table>
+
+</td>
+</tr>
+</table>
+</body>
+</html>
